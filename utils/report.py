@@ -5,6 +5,19 @@ import os
 
 
 def play_say_and_report(pr_data, tune):
+    """
+    Function that plays a tune and says and
+    prints data about a pull request.
+
+    Intended to be used for recently merged
+    pull requests.
+
+    :param pr_data: Data on the pull request.
+    :type pr_data: dict
+
+    :param tune: The tune to play.
+    :type tune: pydub.AudioSegment() instance
+    """
     play(tune)
 
     author = pr_data["user"]["login"]
@@ -16,9 +29,11 @@ def play_say_and_report(pr_data, tune):
     if merger in aliases:
         merger = aliases[merger]
 
-    congratulations = (f"Congratulations {author}, "
-                       f"{merger} merged your {random.choice(descriptors)} "
-                       f"{additions} line pull request")
+    congratulations = (
+        f"Congratulations {author}, "
+        f"{merger} merged your {random.choice(descriptors)} "
+        f"{additions} line pull request"
+    )
 
     try:
         os.system(f"say '{congratulations}'")

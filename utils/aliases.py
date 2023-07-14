@@ -25,6 +25,7 @@ aliases = {
     "lhy11009": "Howian",
 }
 
+# Add descriptors to choose at random
 descriptors = [
     "awesome",
     "incredible",
