@@ -33,6 +33,7 @@ merged_prs = get_merged_prs(repo, fields, 300)
 old_pr = get_most_recent_updated_pr(repo, 1)
 oldest_time = min([pr["merge_time"] for _, pr in merged_prs.items()])
 
+old_pr = 0
 print(f"Loaded {len(merged_prs)} merged PRs")
 # Run a continuous loop for changes to PRs that might represent a merge.
 i = 0
@@ -45,6 +46,8 @@ while True:
         if new_pr not in merged_prs:
             add_new_pr(repo, new_pr, merged_prs, fields)
             if oldest_time < list(merged_prs.items())[0][1]["merge_time"]:
+                # Only play music if PR is less than 5 minutes old
+                #if merged_prs[new_pr]["merge_time"] - merged_prs[old_pr]["merge_time"] < 300:
                 play_say_and_report(merged_prs[new_pr], tune)
             else:
                 print("This should never happen!")

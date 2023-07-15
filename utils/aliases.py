@@ -23,6 +23,8 @@ aliases = {
     "ljhwang": "Lorraine",
     "ryanstoner1": "Ryan",
     "lhy11009": "Howian",
+    "naliboff": "John",
+    "Minerallo": "Meeka",
 }
 
 # Add descriptors to choose at random
