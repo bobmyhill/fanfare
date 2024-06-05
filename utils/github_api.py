@@ -68,10 +68,15 @@ def add_new_pr(repo, number, dict, fields):
     dict[number] = {}
     for field in fields.split(","):
         dict[number][field] = data[field]
-
-    dict[number]["merge_time"] = datetime.strptime(
-        dict[number]["merged_at"], "%Y-%m-%dT%H:%M:%SZ"
-    )
+    try:
+        dict[number]["merge_time"] = datetime.strptime(
+            dict[number]["merged_at"], "%Y-%m-%dT%H:%M:%SZ"
+            )
+        return True
+    except TypeError:
+        print("Error")
+        print(dict[number])
+        return False
 
 
 def get_most_recent_updated_pr(repo, number_with_connection_error=1):

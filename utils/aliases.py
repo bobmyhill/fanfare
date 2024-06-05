@@ -19,12 +19,14 @@ aliases = {
     "zjiaqi2018": "Jiaqi",
     "cedrict": "Cedric",
     "marcel112358": "Marcel",
-    "danieldouglas1992": "Katniss Everdeen",
     "ljhwang": "Lorraine",
     "ryanstoner1": "Ryan",
     "lhy11009": "Howian",
     "naliboff": "John",
     "Minerallo": "Meeka",
+    "danieldouglas92": "Daniel",
+    "Grant-Block": "Grant",
+    "KerrMadeleine": "Madeleine"
 }
 
 # Add descriptors to choose at random
